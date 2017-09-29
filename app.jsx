@@ -15,13 +15,15 @@ let PLAYERS = [
     id: 3,
   },
 ];
-const Header =props =>   {  
+const Header =props =>   { 
+  let sum =  props.players.map(a => a.score).reduce(
+    (a, b) => a + b);
   return (
     <div >
-<header className=' header ' >
+   <header className=' header ' >
   <div className='stats'>
     <div>PLAYERS: {props.players.length}</div>
-    <div>TOTALPOINTS: {props.players.map(a => a.score).reduce((a, b) => a + b)}</div>
+    <div>TOTALPOINTS: {sum}</div>
   </div>
   
   <div className='stopwatch '>
@@ -39,26 +41,23 @@ const Header =props =>   {
 } 
 
 const PlayerList = props => {
-  let play = PLAYERS.map(  index => { return ( 
-  <div>
-    <div className='player' >
-      <p className='player-name'>{index.name}</p>   
-      <div className='player-score counter'>
-        <button className='counter-action decrement btn'>-</button>
-        <span className='counter-score'>{index.score}</span>
-        <button className='counter-action increment btn'>+</button>
+  let play = PLAYERS.map( index => { 
+    return ( 
+    <div  key={index.id}>
+      <div className='player' >
+        <p className='player-name'>{index.name}</p>   
+        <div className='player-score counter'>
+          <button className='counter-action decrement btn'>-</button>
+          <span className='counter-score'>{index.score}</span>
+          <button className='counter-action increment btn'>+</button>
+      </div>
     </div>
   </div>
-</div>
-)
-}
-)
+  )})
   
   return(
     <div >
           {play}
-
-
     </div>
   );
 }
