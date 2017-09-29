@@ -1,6 +1,7 @@
+
 body {
   background: #d5d5d5; 
-  font-family: arial;
+  font-family: 'Roboto Mono', monospace;
   color: #FAFAFA;
   text-transform: uppercase;
 }
@@ -37,6 +38,7 @@ body {
 }
 
 .stats {
+  padding: 0 23%;
   margin-top: 0;
   font-weight: normal;
 }

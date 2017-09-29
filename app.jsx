@@ -17,36 +17,48 @@ let PLAYERS = [
 ];
 const Header =props =>   {  
   return (
-    <div>
-<header className='header' >
-  <table className='stats'>
-  <tr> <td>PLAYERS: {props.players.length}</td> </tr>
-  <tr><td>TOTALPOINTS: 5</td></tr>
-  </table>
+    <div >
+<header className=' header ' >
+  <div className='stats'>
+    <div>PLAYERS: {props.players.length}</div>
+    <div>TOTALPOINTS: 5</div>
+  </div>
   
-  <div className='stopwatch'>
-  <h2>STOPWATCH</h2>
+  <div className='stopwatch '>
+    <h2>STOPWATCH</h2>
     <div className ='stopwatch-time'>
-    0
-      <button>START</button>
-      <button>RESET</button>
+      0 
     </div>
+        <button>START</button>
+        <button>RESET</button>
 
   </div>
 </header>
 </div>
 );
 } 
-const PlayerList = props => {
-  return(
-    <div className='player'>
-      <p className='player-name'>sdf</p>
-      <div className='player-score counter'>
-        <button className='counter-action decrement btn'>sd</button>
-        <span className='counter-score'>ass</span>
-        <button className='counter-action increment btn'></button>
 
-      </div>
+const PlayerList = props => {
+  let play = PLAYERS.map(  index => { return ( 
+  <div>
+    <div className='player' >
+      <p className='player-name'>{index.name}</p>   
+      <div className='player-score counter'>
+        <button className='counter-action decrement btn'>-</button>
+        <span className='counter-score'>{index.score}</span>
+        <button className='counter-action increment btn'>+</button>
+    </div>
+  </div>
+</div>
+)
+}
+)
+  
+  return(
+    <div >
+          {play}
+
+
     </div>
   );
 }
