@@ -21,7 +21,7 @@ const Header =props =>   {
 <header className=' header ' >
   <div className='stats'>
     <div>PLAYERS: {props.players.length}</div>
-    <div>TOTALPOINTS: 5</div>
+    <div>TOTALPOINTS: {props.players.map(a => a.score).reduce((a, b) => a + b)}</div>
   </div>
   
   <div className='stopwatch '>
