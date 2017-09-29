@@ -15,17 +15,17 @@ let PLAYERS = [
     id: 3,
   },
 ];
-const Header =props =>   { 
-  let sum =  props.players.map(a => a.score).reduce(
-    (a, b) => a + b);
+
+const Header =props => { 
+  let sum = props.players.map(a => a.score).reduce(
+    (a,b)=> a + b);
   return (
     <div >
-   <header className=' header ' >
+   <header className=' header' >
   <div className='stats'>
     <div>PLAYERS: {props.players.length}</div>
     <div>TOTALPOINTS: {sum}</div>
   </div>
-  
   <div className='stopwatch '>
     <h2>STOPWATCH</h2>
     <div className ='stopwatch-time'>
@@ -33,7 +33,6 @@ const Header =props =>   {
     </div>
         <button>START</button>
         <button>RESET</button>
-
   </div>
 </header>
 </div>
@@ -61,6 +60,7 @@ const PlayerList = props => {
     </div>
   );
 }
+
 const PlayerForm = props => {
   return(
     <div className='add-player-form' >
@@ -75,9 +75,9 @@ const PlayerForm = props => {
 const Application = ({title, players}) => {
    return (
      <div className='scoreboard'>
-      <Header players={players}/>
-      <PlayerList players={players}/>
-      <PlayerForm />    
+        <Header players={players}/>
+        <PlayerList players={players}/>
+        <PlayerForm />    
      </div>   
    ) ;
 }
